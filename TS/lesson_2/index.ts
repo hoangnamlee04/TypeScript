@@ -1,23 +1,37 @@
-// Sử dụng ":" 
+// ! Sử dụng ":" để khai báo cores type: string, number, boolean, array, object
 
-const myMessage: string = "Xin chao tat ca chung may";
+// ! Sử dụng "type" để khai báo custom type
 
-const myAge: number =30;
+const myMessage: string = "Xin chao ca lop! Rat vui duoc day cac em!";
 
-const myMarried: boolean = false;
+const myAge: number = 30;
 
-const mySkills:string[] = ["html", "css", "js", "react", "driver"]
+const isMarried: boolean = false;
 
-const myJobs: Array<string> = ["developer", "teacher", "grap"]
+const mySkills: string[] = ["HTML", "CSS", "JS", "React", "NodeJS", "MongoDB"]; // Array of string
 
-const myEducation:{
-    school:string;
-    major:string;
-    graduatedYear:number;
-    GPA: number;
-} = {
-    school: "FPOLY",
-    major: "IT",
-    graduatedYear: 2024,
-    GPA: 3.5,
-}
+const myJobs: Array<string> = ["developer", "teacher", "grab dirver"]; // Generic array type
+
+type educationType = {
+  school: string;
+  major: string;
+  graduatedYear: number;
+  GPA: number;
+  sumary: string;
+}; // Custom type
+
+const myEducation: educationType = {
+  school: "FPOLY",
+  major: "Information Technology",
+  graduatedYear: 2024,
+  GPA: 3.5,
+  sumary: "Good student",
+};
+
+const huongEducation: educationType = {
+  school: "FPOLY",
+  major: "Information Technology",
+  graduatedYear: 2023,
+  GPA: 4.0,
+  sumary: "Excellent student",
+};
