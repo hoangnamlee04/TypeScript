@@ -1,14 +1,31 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
+import instance from '../apis'
+import { product } from '../types/Product'
+
+import ProductItem from './ProductItem/ProductItem'
 
 const ProductList = () => {
-  // get data from API
+  const [products, setProducts] = useState<product[]>([])
+
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const { data } = await instance.get('/products')
+        console.log(data)
+        setProducts(data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    getProducts()
+  }, [])
   return (
-    <div>
-      {/*
-        map data from API
-        <Product /> 
-      */}
-    </div>
+    <>
+      {products.map((product) => (
+        <ProductItem product={product} />
+      ))}
+    </>
   )
 }
 

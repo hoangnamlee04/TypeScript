@@ -1,12 +1,13 @@
-import React from 'react'
+import Banner from '~/components/Banner'
 import ProductList from '~/components/ProductList'
-
 const Home = () => {
   return (
-    <div>
-      <h1>San pham ban chay</h1>
-      <ProductList />
-    </div>
+    <>
+      <Banner />
+      <div className='grid grid-cols-4 gap-4 mt-10 ml-10'>
+        <ProductList />
+      </div>
+    </>
   )
 }
 
