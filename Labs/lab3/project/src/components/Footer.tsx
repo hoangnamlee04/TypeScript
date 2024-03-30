@@ -1,12 +1,19 @@
-import React from 'react'
 
 const Footer = () => {
   return (
     <footer className='bg-white'>
+      <hr />
       <div className='mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8'>
         <div className='grid grid-cols-1 gap-8 lg:grid-cols-3'>
           <div>
-            <p className='mt-4 max-w-xs text-gray-800'>KẾT NỐI</p>
+            <div className='text-teal-600'>
+            <img className='w-[150px]' src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Logo-FPT-Shop-Black.png" alt="" />
+              123456788
+            </div>
+
+            <p className='mt-4 max-w-xs text-gray-500'>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non cupiditate quae nam molestias.
+            </p>
 
             <ul className='mt-8 flex gap-6'>
               <li>
@@ -79,7 +86,7 @@ const Footer = () => {
 
           <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4'>
             <div>
-              <p className='font-medium text-gray-900'>Chính sách</p>
+              <p className='font-medium text-gray-900'>Services</p>
 
               <ul className='mt-6 space-y-4 text-sm'>
                 <li>
@@ -120,7 +127,7 @@ const Footer = () => {
             </div>
 
             <div>
-              <p className='font-medium text-gray-900'>Giới thiệu</p>
+              <p className='font-medium text-gray-900'>Company</p>
 
               <ul className='mt-6 space-y-4 text-sm'>
                 <li>
@@ -147,7 +154,7 @@ const Footer = () => {
             </div>
 
             <div>
-              <p className='font-medium text-gray-900'>Liên hệ</p>
+              <p className='font-medium text-gray-900'>Helpful Links</p>
 
               <ul className='mt-6 space-y-4 text-sm'>
                 <li>
