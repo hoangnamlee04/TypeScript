@@ -3,14 +3,18 @@ import { Product } from '~/types/Product'
 
 type Props = {
   products: Product[]
+  onDel: (id: number | undefined) => void
 }
 
-const Dashboard = ({ products }: Props) => {
+const Dashboard = ({ products, onDel }: Props) => {
+  const handleDelete = (id: number | undefined) => {
+    onDel(id)
+  }
   return (
     <>
-      <h1 className='text-4xl text-center'>Hello, admin</h1>
+      <h1 className='text-4xl text-center'>Admin</h1>
 
-      <Link className='mb-10 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' to='/admin/add'>
+      <Link className='mb-10 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded' to='/admin/add'>
         Add new product
       </Link>
 
@@ -39,12 +43,18 @@ const Dashboard = ({ products }: Props) => {
 
                 <td className=' px-4 py-2 text-gray-900'>{item.description}</td>
                 <td className='whitespace-nowrap px-4 py-2 text-gray-700'>
-                  <button className='bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded mr-2'>
+                  <button
+                    onClick={() => handleDelete(Number(item.id))}
+                    className='btn btn-danger bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mr-2'
+                  >
                     Delete
                   </button>
-                  <button className='bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded'>
+                  <Link
+                    to={`/admin/edit/${item.id}`}
+                    className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                  >
                     Edit
-                  </button>
+                  </Link>
                 </td>
               </tr>
             ))}
