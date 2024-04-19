@@ -13,9 +13,13 @@ import ProductDetail from './pages/ProductDetail'
 import Shop from './pages/Shop'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
+//
 import Dashboard from './pages/admin/Dashboard'
 import ProductAdd from './pages/admin/ProductAdd'
 import ProductEdit from './pages/admin/ProductEdit'
+//
+import Login from './pages/Login'
+import Register from './pages/Register'
 const App = () => {
   const navigate = useNavigate()
   ///// Hiển thị
@@ -26,7 +30,8 @@ const App = () => {
       setProducts(data)
     })()
   }, [])
-  /////
+
+  //add
   const handleAddProduct = (product: Product) => {
     ;(async () => {
       const data = await createProduct(product)
@@ -35,7 +40,6 @@ const App = () => {
     navigate('/admin')
   }
   //edit
-  // edit
   const handleEditProduct = (product: Product) => {
     ;(async () => {
       const data = await updateProduct(product)
@@ -72,7 +76,9 @@ const App = () => {
                 <Route path='/admin/edit/:id' element={<ProductEdit onEdit={handleEditProduct} />} />
                 <Route path='/admin' element={<Dashboard products={products} onDel={handleDeleteProduct} />} />
               </Route>
-
+              {/* Login-Register */}
+              <Route path='/login' element={<Login />} />
+              <Route path='/register' element={<Register />} />
               {/* /404/ */}
               <Route path='*' element={<NotFound />} />
               {/* // */}

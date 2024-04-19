@@ -73,22 +73,14 @@ const Header = () => {
             </button>
           </div>
           {/* ĐĂng nhập */}
-          <div className='flex items-center gap-4'>
-            <div className='sm:flex sm:gap-4'>
-              <a
-                className='hidden rounded-md px-3 py-2.5 text-[20px] font-medium text-gray-600 transition hover:text-red-700 sm:block'
-                href='#'
-              >
-                <i className='fa-solid fa-user '></i>
-              </a>
-
-              <a
-                className='hidden rounded-md px-3 py-2.5 text-[20px] font-medium text-gray-600 transition hover:text-red-700 sm:block'
-                href='#'
-              >
-                <i className='fa-solid fa-cart-shopping'></i>
-              </a>
-            </div>
+          <div className='ml-4'>
+            <NavLink to='/register' className='hover:text-gray-300'>
+              Đăng ký
+            </NavLink>
+            <span className='mx-2'>|</span>
+            <NavLink to='/login' className='hover:text-gray-300'>
+              Đăng nhập
+            </NavLink>
           </div>
         </div>
       </div>
