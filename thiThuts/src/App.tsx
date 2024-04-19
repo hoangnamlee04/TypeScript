@@ -75,7 +75,7 @@ function App() {
           element={<AddProduct onSubmit={handleAddProduct} />}
         />
         <Route
-          path="/edit:id"
+          path="/edit/:id"
           element={<EditProduct onSubmit={handleEditProduct} />}
         />
         <Route path="/register" element={<Register />} />

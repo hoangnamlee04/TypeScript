@@ -32,9 +32,13 @@ const EditProduct = ({ onSubmit }: Props) => {
   } = useForm<Product>({
     resolver: joiResolver(productSchema),
   });
+
+  const onEdit = (product: Product) => {
+    onSubmit({ ...product, id });
+  };
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onEdit)}>
         <h1>Edit product</h1>
         <div className="form-group">
           <label htmlFor="">Title</label>
