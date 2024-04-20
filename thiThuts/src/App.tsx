@@ -11,6 +11,8 @@ import instance from "./services";
 
 function App() {
   const navigate = useNavigate();
+
+  // Hiển thị sản phẩm
   const [products, setProducts] = useState<Product[]>([]);
   useEffect(() => {
     (async () => {
@@ -19,7 +21,7 @@ function App() {
     })();
   }, []);
 
-  //Xoa
+  //Xóa sản phẩm
   const handleDeleteProduct = (id: number) => {
     (async () => {
       const isConfirm = confirm("Are you sure you want to delete!");
@@ -30,7 +32,7 @@ function App() {
     })();
   };
 
-  //them
+  //Thêm sản phẩm
   const handleAddProduct = (product: Product) => {
     (async () => {
       const { data } = await instance.post(`/products`, product);
@@ -38,7 +40,8 @@ function App() {
       navigate("/");
     })();
   };
-  //sua
+
+  //Sửa sản phẩm
   const handleEditProduct = (product: Product) => {
     (async () => {
       const { data } = await instance.put(`/products/${product.id}`, product);

@@ -18,6 +18,7 @@ const productSchema = Joi.object({
 
 const EditProduct = ({ onSubmit }: Props) => {
   const [product, setProduct] = useState<Product | null>(null);
+
   const { id } = useParams();
   useEffect(() => {
     (async () => {
@@ -25,6 +26,7 @@ const EditProduct = ({ onSubmit }: Props) => {
       setProduct(data);
     })();
   }, []);
+
   const {
     register,
     handleSubmit,
